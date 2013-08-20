@@ -139,15 +139,15 @@ msgid "large"
 msgstr ""
 
 #: wetkit_widgets.plugins.inc:236;248
-msgid "panopoly_image_quarter"
+msgid "wetkit_image_quarter"
 msgstr ""
 
 #: wetkit_widgets.plugins.inc:237;249
-msgid "panopoly_image_half"
+msgid "wetkit_image_half"
 msgstr ""
 
 #: wetkit_widgets.plugins.inc:238;250
-msgid "panopoly_image_full"
+msgid "wetkit_image_full"
 msgstr ""
 
 #: wetkit_widgets.plugins.inc:241

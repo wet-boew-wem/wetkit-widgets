@@ -8,6 +8,13 @@ include_once 'wetkit_widgets.features.inc';
 include_once 'wetkit_widgets.plugins.inc';
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function wetkit_widgets_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}
+
+/**
  * Implements hook_apps_app_info().
  */
 function wetkit_widgets_apps_app_info() {
@@ -49,80 +56,10 @@ function wetkit_widgets_configure_form_submit($form, &$form_state) {
 }
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function wetkit_widgets_ctools_plugin_directory($module, $plugin) {
-  return 'plugins/' . $plugin;
-}
-
-/**
- * Implement the "Content Settings" fieldset in a pre-render.
- *
- * @see http://drupal.org/node/1567704
- */
-function wetkit_widgets_fieldable_panel_pane_pre_render($element) {
-  // Add a content settings fieldset.
-  $element['content_settings'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Content Settings'),
-    '#weight' => 1,
-  );
-
-  // Add any remaining fields to the content settings fieldset.
-  foreach ($element as $key => $value) {
-    if (substr($key, 0, 6) == 'field_' || $key == 'body') {
-      $element['content_settings'][$key] = $value;
-      unset($element[$key]);
-    }
-    if (drupal_substr($key, 0, 8) == 'language') {
-      $element['content_settings'][$key] = $value;
-      unset($element[$key]);
-    }
-  }
-
-  return $element;
-}
-
-/**
- * Implements hook_entity_info_alter().
- */
-function wetkit_widgets_entity_info_alter(&$entity_info) {
-
-  // Tabbed Interface.
-  $entity_info['fieldable_panels_pane']['bundles']['tabbed_interface'] = array(
-    'label' => t('Add tabbed interface'),
-    'pane category' => t('WetKit'),
-    'pane top level' => TRUE,
-    'pane icon' => drupal_get_path('module', 'wetkit_widgets') . '/images/icon_tabbed_interface.png',
-    'admin' => array(
-      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
-      'bundle argument' => 4,
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/tabbed-interface',
-      'access arguments' => array('administer fieldable panels panes'),
-    ),
-  );
-}
-
-/**
- * Implements hook_theme_registry_alter().
- */
-function wetkit_widgets_theme_registry_alter(&$theme_registry) {
-  $mod_path = drupal_get_path('module', 'wetkit_widgets') . '/templates';
-  $theme_registry_copy = $theme_registry;
-  _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'pow', $mod_path);
-  $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
-}
-
-/**
  * Implements hook_theme().
  */
 function wetkit_widgets_theme($existing, $type, $theme, $path) {
   return array(
-    'fieldable_panels_pane' => array(
-      'render element' => 'elements',
-      'template'  => 'templates/fieldable_panels_pane/wetkit-widgets-fieldable-panels-pane',
-      'path' => drupal_get_path('module', 'wetkit_widgets'),
-    ),
     'wetkit_widgets_file_video' => array(
       'variables' => array(
         'files' => array(),
@@ -133,14 +70,7 @@ function wetkit_widgets_theme($existing, $type, $theme, $path) {
         'width' => NULL,
         'height' => NULL,
       ),
-      'file' => 'wetkit_widgets.theme.inc',
-    ),
-    'wetkit_tab_interface_view' => array(
-      'variables' => array(
-        'items' => NULL,
-        'delta' => NULL,
-        'settings' => NULL,
-      ),
+      'file' => 'theme/wetkit_widgets.theme.inc',
     ),
   );
 }
@@ -167,4 +97,73 @@ function wetkit_widgets_file_default_types() {
   );
 
   return $types;
+}
+
+/**
+ * Implementation of hook_ctools_content_subtype_alter()
+ */
+function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
+
+  // Modify the menu block plugin to better fit into our UI
+  if ($plugin['module'] == 'menu_block' && $subtype['menu_title'] == 'Main menu') {
+    $subtype['category'][0] = t('Custom');
+    $subtype['top level'] = TRUE;
+    $subtype['title'] = t('Add submenu');
+    $subtype['icon'] = drupal_get_path('module', 'wetkit_widgets') . '/images/icon_submenu.png';
+    $subtype['admin css'] = array(drupal_get_path('module', 'menu_block') . '/menu-block-admin.css');
+    $subtype['admin js'] = array(drupal_get_path('module', 'menu_block') . '/menu-block.js');
+  }
+
+  // Modify the general content item to appear in the generic content sidebar area
+  if ($plugin['module'] == 'views_content' && $subtype['title'] == 'Piece of Content') {
+    $subtype['category'][0] = t('Custom');
+    $subtype['top level'] = TRUE;
+    $subtype['title'] = t('Add content item');
+    $subtype['icon'] = drupal_get_path('module', 'wetkit_widgets') . '/images/icon_content_item.png';
+  }
+
+  // Modify the general content listing to appear in the generic content sidebar area
+  if ($plugin['module'] == 'views_content' && $subtype['title'] == 'List of Content') {
+    $subtype['category'][0] = t('Custom');
+    $subtype['top level'] = TRUE;
+    $subtype['title'] = t('Add content list');
+    $subtype['icon'] = drupal_get_path('module', 'wetkit_widgets') . '/images/icon_content_list.png';
+  }
+
+  // Modify the plugins so we do away with this "node" and "entity" thing
+  if ($subtype['category'] == 'Node' || $subtype['category'] == 'Entity') {
+    $subtype['category'] = t('Page Content');
+  }
+  if ($subtype['category'] == 'User') {
+    $subtype['category'] = t('User Content');
+  }
+  if ($subtype['category'] == 'Taxonomy_term' || $subtype['category'] == 'Taxonomy term') {
+    $subtype['category'] = t('Category Content');
+  }
+
+  // Modify the plugins so we have consistent language around "form" content
+  if ($subtype['category'] == 'Form') {
+    $subtype['category'] = t('Form Content');
+  }
+}
+
+/**
+ * Implementation of hook_form_alter()
+ */
+function wetkit_widgets_form_alter(&$form, &$form_state, $form_id) {
+
+  // Simplify the menu block edit form
+  if ($form_id == 'menu_block_menu_tree_content_type_edit_form') {
+    $form['admin_title']['#access'] = FALSE;
+    $form['depth']['#access'] = FALSE;
+    $form['display_options']['#default_value'] = 'advanced';
+    $form['display_options']['#access'] = FALSE;
+    $form['title_link']['#access'] = FALSE;
+    $form['buttons']['#prefix'] = '<div class="menu-block-ctools-buttons">';
+
+    // Disable some options since they appear busted or confusing in Menu Block
+    // TODO - http://drupal.org/node/1649112
+    $form['parent_mlid']['#access'] = FALSE;
+    $form['sort']['#access'] = FALSE;
+  }
 }
