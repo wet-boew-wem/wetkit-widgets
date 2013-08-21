@@ -131,7 +131,6 @@ function wetkit_widgets_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Caption');
-  t('Items');
   t('Poster');
 
   return $field_instances;

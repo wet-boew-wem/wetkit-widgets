@@ -76,30 +76,6 @@ function wetkit_widgets_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_file_default_types().
- */
-function wetkit_widgets_file_default_types() {
-  $types = array();
-
-  // WetKit Video.
-  $types['wetkit_video'] = (object) array(
-    'api_version' => 1,
-    'type' => 'wetkit_video',
-    'label' => t('WetKit Video'),
-    'description' => t('A <em>WetKit Video</em> file is a moving visual recording using the WET video player.'),
-    'mimetypes' => array(
-      'video/mp4',
-      'video/ogg',
-    ),
-    'streams' => array(
-      'public',
-    ),
-  );
-
-  return $types;
-}
-
-/**
  * Implementation of hook_ctools_content_subtype_alter()
  */
 function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
