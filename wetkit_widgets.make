@@ -24,5 +24,5 @@ projects[media][download][revision] = 74ef96b
 projects[media][download][branch] = 7.x-2.x
 projects[media][patch][1974774] = http://drupal.org/files/media-1974774-8.patch
 projects[media][patch][1411340] = http://drupal.org/files/media-resize_images_in_wysiwyg-1411340-71.patch
-projects[media][patch][1957812] = https://drupal.org/files/media_browser-1957812-09.patch
+projects[media][patch][1957812] = http://drupal.org/files/media_browser-1957812-09.patch
 projects[media][patch][2052927] = http://drupal.org/files/media-added-zindex-to-ui-dialog-to-display-above-panels-add-content-modal-2052927-2.patch
