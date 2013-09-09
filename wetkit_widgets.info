@@ -10,6 +10,7 @@ dependencies[] = file_entity
 dependencies[] = image
 dependencies[] = link
 dependencies[] = media
+dependencies[] = media_wysiwyg_view_mode
 dependencies[] = menu_block
 dependencies[] = page_manager
 dependencies[] = views_autocomplete_filters
