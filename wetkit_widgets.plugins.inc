@@ -187,7 +187,7 @@ function wetkit_widgets_field_formatter_view($entity_type, $entity, $field, $ins
   $settings = $display['settings'];
   $formatter = $display['type'];
 
-  if ($display['type'] == 'file_wetkit_video') {
+  if ($formatter == 'file_wetkit_video') {
     $multiple_file_behaviour = isset($settings['multiple_file_behaviour']) ? $settings['multiple_file_behaviour'] : 'sources';
 
     // Prevent 'empty' fields from causing a WSOD.
@@ -267,7 +267,7 @@ function wetkit_widgets_field_formatter_wetkit_widgets_lightbox($variables) {
 
     // Take into account multilingual.
     $file = entity_load('file', array($item['fid']));
-    foreach($file as $single_file) {
+    foreach ($file as $single_file) {
       $field_file_alt = field_get_items('file', $single_file, 'field_file_image_alt_text', 'en');
       if (isset($field_file_alt)) {
         $alt = $field_file_alt[0]['safe_value'];
@@ -283,7 +283,6 @@ function wetkit_widgets_field_formatter_wetkit_widgets_lightbox($variables) {
       'style_name' => $settings['image_style_source'],
       'path' => $item['uri'],
     ));
-    //$destination = image_style_path($settings['image_style_destination'], $item['uri']);
     $destination = $item['uri'];
     $output .= '<li>' . l($source, file_create_url($destination), array(
       'html' => TRUE,

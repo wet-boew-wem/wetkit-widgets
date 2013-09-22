@@ -76,11 +76,11 @@ function wetkit_widgets_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implementation of hook_ctools_content_subtype_alter()
+ * Implements hook_ctools_content_subtype_alter().
  */
 function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
 
-  // Modify the menu block plugin to better fit into our UI
+  // Modify the menu block plugin to better fit into our UI.
   if ($plugin['module'] == 'menu_block' && $subtype['menu_title'] == 'Main menu') {
     $subtype['category'][0] = t('Custom');
     $subtype['top level'] = TRUE;
@@ -90,7 +90,7 @@ function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
     $subtype['admin js'] = array(drupal_get_path('module', 'menu_block') . '/menu-block.js');
   }
 
-  // Modify the general content item to appear in the generic content sidebar area
+  // Modify the general content item to appear in the generic content sidebar.
   if ($plugin['module'] == 'views_content' && $subtype['title'] == 'Piece of Content') {
     $subtype['category'][0] = t('Custom');
     $subtype['top level'] = TRUE;
@@ -98,7 +98,7 @@ function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
     $subtype['icon'] = drupal_get_path('module', 'wetkit_widgets') . '/images/icon_content_item.png';
   }
 
-  // Modify the general content listing to appear in the generic content sidebar area
+  // Modify the general content list to appear in the generic content sidebar.
   if ($plugin['module'] == 'views_content' && $subtype['title'] == 'List of Content') {
     $subtype['category'][0] = t('Custom');
     $subtype['top level'] = TRUE;
@@ -106,7 +106,7 @@ function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
     $subtype['icon'] = drupal_get_path('module', 'wetkit_widgets') . '/images/icon_content_list.png';
   }
 
-  // Modify the plugins so we do away with this "node" and "entity" thing
+  // Modify the plugins so we do away with this "node" and "entity" thing.
   if ($subtype['category'] == 'Node' || $subtype['category'] == 'Entity') {
     $subtype['category'] = t('Page Content');
   }
@@ -117,18 +117,18 @@ function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
     $subtype['category'] = t('Category Content');
   }
 
-  // Modify the plugins so we have consistent language around "form" content
+  // Modify the plugins so we have consistent language around "form" content.
   if ($subtype['category'] == 'Form') {
     $subtype['category'] = t('Form Content');
   }
 }
 
 /**
- * Implementation of hook_form_alter()
+ * Implements hook_form_alter().
  */
 function wetkit_widgets_form_alter(&$form, &$form_state, $form_id) {
 
-  // Simplify the menu block edit form
+  // Simplify the menu block edit form.
   if ($form_id == 'menu_block_menu_tree_content_type_edit_form') {
     $form['admin_title']['#access'] = FALSE;
     $form['depth']['#access'] = FALSE;
@@ -138,7 +138,7 @@ function wetkit_widgets_form_alter(&$form, &$form_state, $form_id) {
     $form['buttons']['#prefix'] = '<div class="menu-block-ctools-buttons">';
 
     // Disable some options since they appear busted or confusing in Menu Block
-    // TODO - http://drupal.org/node/1649112
+    // TODO - http://drupal.org/node/1649112.
     $form['parent_mlid']['#access'] = FALSE;
     $form['sort']['#access'] = FALSE;
   }
