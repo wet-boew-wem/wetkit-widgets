@@ -27,4 +27,4 @@ projects[media][patch][1411340] = http://drupal.org/files/media-resize_images_in
 projects[media][patch][1957812] = http://drupal.org/files/media_browser-1957812-10.patch
 projects[media][patch][2052927] = http://drupal.org/files/media-added-zindex-to-ui-dialog-to-display-above-panels-add-content-modal-2052927-2.patch
 projects[media][patch][2071073] = http://drupal.org/files/media-warnings-creating-default-object-from-emtpy-value-2071073-1.patch
-projects[media][patch][2093435] = https://drupal.org/files/2093435-media-js-dialog-issues.patch
+projects[media][patch][2093435] = http://drupal.org/files/2093435-media-js-dialog-issues.patch
