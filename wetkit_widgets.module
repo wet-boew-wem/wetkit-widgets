@@ -76,6 +76,14 @@ function wetkit_widgets_theme($existing, $type, $theme, $path) {
 }
 
 /**
+* Implements hook_admin_paths_alter().
+*/
+function wetkit_widgets_admin_paths_alter(&$paths) {
+  // Don't treat as admin path otherwise admin theme loads when modal appears.
+  $paths['media/*/edit/*'] = FALSE;
+}
+
+/**
  * Implements hook_ctools_content_subtype_alter().
  */
 function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
