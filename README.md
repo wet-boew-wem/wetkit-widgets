@@ -1,5 +1,5 @@
-WetKit Widgets
-================
+Widgets
+=======
 Creates widget related functionality for use with [Drupal WxT][drupalwxt].
 
 Key Features
