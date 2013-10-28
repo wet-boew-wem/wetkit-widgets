@@ -22,6 +22,6 @@ projects[media][subdir] = contrib
 projects[media][download][type] = git
 projects[media][download][revision] = 6af0fc9
 projects[media][download][branch] = 7.x-2.x
-projects[media][patch][2067063] = http://drupal.org/files/media-missing-attributes-2067063-115.patch
+projects[media][patch][2067063] = http://drupal.org/files/media-broken-wysiwyg-2067063-115.patch
 projects[media][patch][2062721] = http://drupal.org/files/media-wysiwyg-override-white-list-2062721-20.patch
 projects[media][patch][2093435] = http://drupal.org/files/2093435-media-js-dialog-issues.patch
