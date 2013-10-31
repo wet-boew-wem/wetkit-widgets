@@ -267,12 +267,13 @@ function wetkit_widgets_field_formatter_wetkit_widgets_lightbox($variables) {
 
     // Take into account multilingual.
     $file = entity_load('file', array($item['fid']));
+    global $language;
     foreach ($file as $single_file) {
-      $field_file_alt = field_get_items('file', $single_file, 'field_file_image_alt_text', 'en');
+      $field_file_alt = field_get_items('file', $single_file, 'field_file_image_alt_text', $language->language);
       if (isset($field_file_alt)) {
         $alt = $field_file_alt[0]['safe_value'];
       }
-      $field_file_title = field_get_items('file', $single_file, 'field_file_image_title_text');
+      $field_file_title = field_get_items('file', $single_file, 'field_file_image_title_text', $language->language);
       if (isset($field_file_title)) {
         $title = $field_file_title[0]['safe_value'];
       }
