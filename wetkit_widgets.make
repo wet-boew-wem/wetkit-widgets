@@ -22,3 +22,4 @@ projects[media][subdir] = contrib
 projects[media][download][type] = git
 projects[media][download][revision] = 2283c03
 projects[media][download][branch] = 7.x-2.x
+projects[media][patch][2126697] = http://drupal.org/files/issues/media-wysiwyg-alt-title-handling.patch
