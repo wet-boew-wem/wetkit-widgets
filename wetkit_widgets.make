@@ -22,4 +22,4 @@ projects[media][subdir] = contrib
 projects[media][download][type] = git
 projects[media][download][revision] = b86ad75
 projects[media][download][branch] = 7.x-2.x
-projects[media][patch][1514378] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-011.patch
+projects[media][patch][1514378] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-012.patch
