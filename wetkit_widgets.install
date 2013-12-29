@@ -17,3 +17,18 @@ function wetkit_widgets_uninstall() {
     }
   }
 }
+
+/**
+ * Media has been converted to use many sub modules.
+ */
+function wetkit_widgets_update_7101() {
+  if (!module_exists('media_bulk_upload')) {
+    module_enable(array('media_bulk_upload'));
+  }
+  if (!module_exists('media_wysiwyg')) {
+    module_enable(array('media_wysiwyg'));
+  }
+  if (!module_exists('media_wysiwyg_view_mode')) {
+    module_enable(array('media_wysiwyg_view_mode'));
+  }
+}
