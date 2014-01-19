@@ -8,13 +8,6 @@ include_once 'wetkit_widgets.features.inc';
 include_once 'wetkit_widgets.plugins.inc';
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function wetkit_widgets_ctools_plugin_directory($module, $plugin) {
-  return 'plugins/' . $plugin;
-}
-
-/**
  * Implements hook_apps_app_info().
  */
 function wetkit_widgets_apps_app_info() {
