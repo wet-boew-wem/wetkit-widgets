@@ -20,6 +20,6 @@ projects[file_lock][patch][1514378] = http://drupal.org/files/file-lock-temporar
 projects[media][version] = 2.x-dev
 projects[media][subdir] = contrib
 projects[media][download][type] = git
-projects[media][download][revision] = b86ad75
+projects[media][download][revision] = aed50be
 projects[media][download][branch] = 7.x-2.x
 projects[media][patch][2187771] = http://drupal.org/files/issues/media_macro_handler_interface-2187771-01.patch
