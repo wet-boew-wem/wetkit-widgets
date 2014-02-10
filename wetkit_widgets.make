@@ -8,6 +8,7 @@ projects[file_entity][subdir] = contrib
 projects[file_entity][download][type] = git
 projects[file_entity][download][revision] = fee20d5
 projects[file_entity][download][branch] = 7.x-2.x
+projects[file_entity][patch][2192391] = http://drupal.org/files/issues/file_entity_remove_file_display-2192391-01.patch
 
 projects[file_lock][version] = 2.x-dev
 projects[file_lock][subdir] = contrib
@@ -23,3 +24,4 @@ projects[media][download][type] = git
 projects[media][download][revision] = 0d39e26
 projects[media][download][branch] = 7.x-2.x
 projects[media][patch][2187771] = http://drupal.org/files/issues/media_macro_handler_interface-2187771-04.patch
+projects[media][patch][2104193] = http://drupal.org/files/issues/media_remove_file_display_alter-2104193-23.patch
