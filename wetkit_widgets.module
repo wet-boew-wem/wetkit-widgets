@@ -123,24 +123,3 @@ function wetkit_widgets_ctools_content_subtype_alter(&$subtype, &$plugin) {
     $subtype['category'] = t('Form Content');
   }
 }
-
-/**
- * Implements hook_form_alter().
- */
-function wetkit_widgets_form_alter(&$form, &$form_state, $form_id) {
-
-  // Simplify the menu block edit form.
-  if ($form_id == 'menu_block_menu_tree_content_type_edit_form') {
-    $form['admin_title']['#access'] = FALSE;
-    $form['depth']['#access'] = FALSE;
-    $form['display_options']['#default_value'] = 'advanced';
-    $form['display_options']['#access'] = FALSE;
-    $form['title_link']['#access'] = FALSE;
-    $form['buttons']['#prefix'] = '<div class="menu-block-ctools-buttons">';
-
-    // Disable some options since they appear busted or confusing in Menu Block
-    // TODO - http://drupal.org/node/1649112.
-    $form['parent_mlid']['#access'] = FALSE;
-    $form['sort']['#access'] = FALSE;
-  }
-}
