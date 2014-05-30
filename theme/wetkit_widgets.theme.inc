@@ -42,8 +42,9 @@ function theme_wetkit_widgets_file_video($variables) {
     $video_attributes['height'] = $variables['height'];
   }
 
-  if (isset($files[0]['field_poster'][LANGUAGE_NONE][0]['uri'])) {
-    $video_attributes['poster'] = file_create_url($files[0]['field_poster'][LANGUAGE_NONE][0]['uri']);
+  if (isset($files[0]['field_poster'][LANGUAGE_NONE][0]['fid'])) {
+    $imgpath = file_load($files[0]['field_poster'][LANGUAGE_NONE][0]['fid'])->uri;
+    $video_attributes['poster'] = file_create_url($imgpath);
   }
 
   $output .= '<div class="wet-boew-multimedia span-4"><video' . drupal_attributes($video_attributes) . '>';
@@ -55,11 +56,12 @@ function theme_wetkit_widgets_file_video($variables) {
     $output .= '<source' . drupal_attributes($source_attributes) . ' />';
   }
 
-  if (isset($files[0]['field_caption'][LANGUAGE_NONE][0]['uri'])) {
+  if (isset($files[0]['field_caption'][LANGUAGE_NONE][0]['fid'])) {
+    $file = file_load($files[0]['field_caption'][LANGUAGE_NONE][0]['fid']);
     $track_attributes = array(
-      'data-type' => $files[0]['field_caption'][LANGUAGE_NONE][0]['filemime'],
+      'data-type' => $file->filemime,
       'kind' => 'captions',
-      'src' => file_create_url($files[0]['field_caption'][LANGUAGE_NONE][0]['uri']),
+      'src' => file_create_url($file->uri),
     );
     $output .= '<track' . drupal_attributes($track_attributes) . ' />';
   }
