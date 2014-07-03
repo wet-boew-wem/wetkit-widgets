@@ -47,7 +47,7 @@ function theme_wetkit_widgets_file_video($variables) {
     $video_attributes['poster'] = file_create_url($imgpath);
   }
 
-  $output .= '<div class="wet-boew-multimedia span-4"><video' . drupal_attributes($video_attributes) . '>';
+  $output .= '<div class="wb-mltmd"><video' . drupal_attributes($video_attributes) . '>';
   foreach ($files as $file) {
     $source_attributes = array(
       'src' => file_create_url($file['uri']),
