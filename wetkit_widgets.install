@@ -29,3 +29,32 @@ function wetkit_widgets_update_7101() {
     module_enable(array('media_wysiwyg_view_mode'));
   }
 }
+
+/**
+ * Media + File Entity hook update correction.
+ */
+function wetkit_widgets_update_7102() {
+  // Media (7226) + File Entity (7215) functionality was reverted and hooks
+  // reused for different functionality which is a bad practice and forces
+  // us to fix the issue here.
+
+  // Accommodate the introduction of a new permission for media browser.
+  $roles = user_roles(FALSE, 'create files');
+  foreach ($roles as $rid => $role) {
+    user_role_grant_permissions($rid, array('access media browser'));
+  }
+
+  // Changing a primary key serial field to an int
+  // @see https://drupal.org/node/190027
+  db_add_index('file_metadata', 'temp', array('fid'));
+  db_drop_primary_key('file_metadata');
+  db_change_field('file_metadata', 'fid', 'fid', array(
+    'description' => 'The {file_managed}.fid of the metadata.',
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'default' => 0,
+  ));
+  db_add_primary_key('file_metadata', array('fid', 'name'));
+  db_drop_index('file_metadata', 'temp');
+}
