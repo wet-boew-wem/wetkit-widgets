@@ -6,7 +6,7 @@ core = 7.x
 projects[file_entity][version] = 2.x-dev
 projects[file_entity][subdir] = contrib
 projects[file_entity][download][type] = git
-projects[file_entity][download][revision] = 1e037ad
+projects[file_entity][download][revision] = 5e9c095
 projects[file_entity][download][branch] = 7.x-2.x
 projects[file_entity][patch][2198973] = http://drupal.org/files/issues/file_entity_override_widgets-2198973-01.patch
 
