@@ -58,3 +58,15 @@ function wetkit_widgets_update_7102() {
   db_add_primary_key('file_metadata', array('fid', 'name'));
   db_drop_index('file_metadata', 'temp');
 }
+
+/**
+ * Media + File Entity hook update correction.
+ */
+function wetkit_widgets_update_7103() {
+  // Media (7226) + File Entity (7215) functionality was reverted and hooks
+  // reused for different functionality which is a bad practice and forces
+  // us to fix the issue here.
+
+  drupal_set_installed_schema_version('file_entity', '7215');
+  drupal_set_installed_schema_version('media', '7226');
+}
