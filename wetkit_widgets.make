@@ -19,6 +19,6 @@ projects[file_lock][patch][1514378] = http://drupal.org/files/file-lock-temporar
 
 projects[media][version] = 2.0-alpha4
 projects[media][subdir] = contrib
-projects[media][patch][2187771] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-19.patch
+projects[media][patch][2187771] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-20.patch
 projects[media][patch][2126697] = http://drupal.org/files/issues/media-wysiwyg-alt-title-handling-2126697-27.patch
 projects[media][patch][2308487] = http://drupal.org/files/issues/media-alt-title-double-encoded-2308487-2.patch
