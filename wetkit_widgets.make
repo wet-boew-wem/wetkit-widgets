@@ -5,7 +5,7 @@ core = 7.x
 
 projects[file_entity][version] = 2.0-beta1
 projects[file_entity][subdir] = contrib
-projects[file_entity][patch][2000934] = http://drupal.org/files/issues/file_entity_upload_specify_path-2000934-8.patch
+projects[file_entity][patch][2000934] = http://drupal.org/files/issues/file_entity_upload_specify_path-2000934-9_0.patch
 projects[file_entity][patch][2198973] = http://drupal.org/files/issues/file_entity_override_widgets-2198973-01.patch
 projects[file_entity][patch][2353351] = http://drupal.org/files/issues/2353351-replace-file-in-subdir_0.patch
 
