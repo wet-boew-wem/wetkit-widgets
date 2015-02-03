@@ -21,4 +21,5 @@ projects[media][version] = 2.0-alpha4
 projects[media][subdir] = contrib
 projects[media][patch][2187771] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-20.patch
 projects[media][patch][2126697] = http://drupal.org/files/issues/media-wysiwyg-alt-title-handling-2126697-27.patch
+projects[media][patch][2272567] = http://drupal.org/files/issues/media_dialog_appears-2272567-8.patch
 projects[media][patch][2308487] = http://drupal.org/files/issues/media-alt-title-double-encoded-2308487-2.patch
