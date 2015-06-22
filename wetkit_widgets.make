@@ -13,7 +13,10 @@ projects[file_lock][subdir] = contrib
 
 projects[media][version] = 2.0-alpha4
 projects[media][subdir] = contrib
+projects[media][patch][1975836] = http://drupal.org/files/issues/media-exposed-filter-fix-1975836-2.patch
+projects[media][patch][2084287] = http://drupal.org/files/issues/media-file-name-focus-2084287-2.patch
 projects[media][patch][2187771] = http://drupal.org/files/issues/media_alt_attributes_et-2129273-20.patch
-projects[media][patch][2126697] = http://drupal.org/files/issues/media-wysiwyg-alt-title-handling-2126697-27.patch
+projects[media][patch][2126697] = http://drupal.org/files/issues/media_wysiwyg_2126697-53.patch
 projects[media][patch][2272567] = http://drupal.org/files/issues/media_dialog_appears-2272567-8.patch
 projects[media][patch][2308487] = http://drupal.org/files/issues/media-alt-title-double-encoded-2308487-2.patch
+projects[media][patch][2421589] = http://drupal.org/files/issues/media-library-preview-overflow-2421589-3.patch
