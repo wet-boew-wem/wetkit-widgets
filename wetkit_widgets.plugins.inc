@@ -255,13 +255,6 @@ function wetkit_widgets_field_formatter_wetkit_widgets_lightbox($variables) {
   // Formatter settings.
   $settings = $variables['#display']['settings'];
   $output = '';
-
-  drupal_add_css(".wet-boew-lightbox ul {margin-left:0 !important;}
-    .wet-boew-lightbox img.wetkit-image-half { margin-top: 0px; }
-   	.wet-boew-lightbox ul li {list-style-type:none; float:left; margin: 0 5px 0 0;}
-    .wet-boew-lightbox ul li.box {margin-bottom: 0.4em;}
-    .wet-boew-lightbox li img {margin-bottom:0;}
-    .wet-boew-lightbox ul li a {text-decoration: none;}", 'inline');
   foreach (element_children($variables['#items']) as $delta) {
     $item = $variables['#items'][$delta];
 
@@ -271,11 +264,11 @@ function wetkit_widgets_field_formatter_wetkit_widgets_lightbox($variables) {
     foreach ($file as $single_file) {
       $field_file_alt = field_get_items('file', $single_file, 'field_file_image_alt_text', $language->language);
       if (isset($field_file_alt)) {
-        $alt = $field_file_alt[0]['safe_value'];
+        $alt = $field_file_alt[0]['value'];
       }
       $field_file_title = field_get_items('file', $single_file, 'field_file_image_title_text', $language->language);
       if (isset($field_file_title)) {
-        $title = $field_file_title[0]['safe_value'];
+        $title = $field_file_title[0]['value'];
       }
     }
 
