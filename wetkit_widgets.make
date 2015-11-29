@@ -7,6 +7,7 @@ projects[file_entity][version] = 2.0-beta2
 projects[file_entity][subdir] = contrib
 projects[file_entity][patch][2000934] = http://drupal.org/files/issues/allow_selection_of-2000934-30.patch
 projects[file_entity][patch][2198973] = http://drupal.org/files/issues/file_entity_override_widgets-2198973-01.patch
+projects[file_entity][patch][2533816] = http://drupal.org/files/issues/file_entity-notice_undefined_offset_menu_translate-2533816-4.patch
 
 projects[file_lock][version] = 2.0
 projects[file_lock][subdir] = contrib
