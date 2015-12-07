@@ -10,7 +10,7 @@
 function wetkit_widgets_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'file-audio-filename_field'
+  // Exported field_instance: 'file-audio-filename_field'.
   $field_instances['file-audio-filename_field'] = array(
     'bundle' => 'audio',
     'default_value' => NULL,
@@ -71,7 +71,71 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-filename_field'
+  // Exported field_instance: 'file-document-field_document_name'.
+  $field_instances['file-document-field_document_name'] = array(
+    'bundle' => 'document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_document_name',
+    'label' => 'Document Name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'file-document-filename_field'.
   $field_instances['file-document-filename_field'] = array(
     'bundle' => 'document',
     'default_value' => NULL,
@@ -82,7 +146,7 @@ function wetkit_widgets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'link' => array(
         'label' => 'above',
@@ -128,11 +192,11 @@ function wetkit_widgets_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_alt_text'
+  // Exported field_instance: 'file-image-field_file_image_alt_text'.
   $field_instances['file-image-field_file_image_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -196,7 +260,7 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -260,7 +324,7 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-filename_field'
+  // Exported field_instance: 'file-image-filename_field'.
   $field_instances['file-image-filename_field'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -321,7 +385,7 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-filename_field'
+  // Exported field_instance: 'file-video-filename_field'.
   $field_instances['file-video-filename_field'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -382,7 +446,7 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-wetkit_video-field_caption'
+  // Exported field_instance: 'file-wetkit_video-field_caption'.
   $field_instances['file-wetkit_video-field_caption'] = array(
     'bundle' => 'wetkit_video',
     'deleted' => 0,
@@ -443,7 +507,7 @@ function wetkit_widgets_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-wetkit_video-field_poster'
+  // Exported field_instance: 'file-wetkit_video-field_poster'.
   $field_instances['file-wetkit_video-field_poster'] = array(
     'bundle' => 'wetkit_video',
     'deleted' => 0,
@@ -518,6 +582,7 @@ function wetkit_widgets_field_default_field_instances() {
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
   t('Caption');
+  t('Document Name');
   t('File name');
   t('Poster');
   t('Title Text');
