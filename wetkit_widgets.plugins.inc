@@ -45,6 +45,7 @@ function wetkit_widgets_field_formatter_info() {
 function wetkit_widgets_field_formatter_settings_summary($field, $instance, $view_mode) {
   $display = $instance['display'][$view_mode];
   $settings = $display['settings'];
+  $summary = "";
 
   if ($display['type'] === 'file_wetkit_video') {
     $summary_items = array();
