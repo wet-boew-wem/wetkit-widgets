@@ -20,3 +20,4 @@ projects[media][patch][2126697] = http://drupal.org/files/issues/media_wysiwyg_2
 projects[media][patch][2272567] = http://drupal.org/files/issues/media_dialog_appears-2272567-8.patch
 projects[media][patch][2308487] = http://drupal.org/files/issues/media-alt-title-double-encoded-2308487-2.patch
 projects[media][patch][2317519] = http://drupal.org/files/issues/media-multiple-blank-wysiwyg-2317519-22.patch
+projects[media][patch][2568123] = http://drupal.org/files/issues/unable_to_create-2568123-2.patch
