@@ -4,4 +4,5 @@
 /* File Widget */
 img.file-icon,
 div.file-widget img {
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin-right: 2px; }
