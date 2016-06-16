@@ -70,12 +70,3 @@ function wetkit_widgets_update_7103() {
   drupal_set_installed_schema_version('file_entity', '7215');
   drupal_set_installed_schema_version('media', '7226');
 }
-
-/**
- * Media CKEditor component has been moved to the media_ckeditor project.
- */
-function wetkit_widgets_update_7104() {
-  if (!module_exists('media_ckeditor')) {
-    module_enable(array('media_ckeditor'));
-  }
-}
