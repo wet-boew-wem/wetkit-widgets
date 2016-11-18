@@ -11,5 +11,11 @@ projects[file_entity][patch][2198973] = http://drupal.org/files/issues/file_enti
 projects[file_lock][version] = 2.0
 projects[file_lock][subdir] = contrib
 
-projects[media][version] = 2.0-beta7
+projects[media][version] = 2.0-beta2
 projects[media][subdir] = contrib
+projects[media][patch][2084287] = http://drupal.org/files/issues/media-file-name-focus-2084287-2.patch
+projects[media][patch][2187771] = http://drupal.org/files/issues/media_alt_attributes-2129273-24.patch
+projects[media][patch][2126697] = http://drupal.org/files/issues/media_wysiwyg_2126697-53.patch
+projects[media][patch][2308487] = http://drupal.org/files/issues/media-alt-title-double-encoded-2308487-2.patch
+projects[media][patch][2317519] = http://drupal.org/files/issues/media-multiple-blank-wysiwyg-2317519-22.patch
+projects[media][patch][2568123] = http://drupal.org/files/issues/unable_to_create-2568123-2.patch
