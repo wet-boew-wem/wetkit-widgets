@@ -13,4 +13,4 @@ projects[file_lock][subdir] = contrib
 
 projects[media][version] = 2.0-beta7
 projects[media][subdir] = contrib
-projects[file_entity][patch][2828665] = http://drupal.org/files/issues/regression_introduced-2828665-7.patch
+projects[media][patch][2828665] = http://drupal.org/files/issues/regression_introduced-2828665-7.patch
