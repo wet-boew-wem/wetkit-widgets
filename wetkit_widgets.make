@@ -11,7 +11,5 @@ projects[file_entity][patch][2198973] = http://drupal.org/files/issues/file_enti
 projects[file_lock][version] = 2.0
 projects[file_lock][subdir] = contrib
 
-projects[media][version] = 2.0-beta7
+projects[media][version] = 2.0-rc5
 projects[media][subdir] = contrib
-projects[media][patch][2828665] = http://drupal.org/files/issues/regression_introduced-2828665-7.patch
-projects[media][patch][2828856] = https://www.drupal.org/files/issues/regression_with_entity-2828856-7.patch
