@@ -12,5 +12,5 @@ projects[file_entity][patch][2232247] = http://drupal.org/files/issues/file_enti
 projects[file_lock][version] = 2.0
 projects[file_lock][subdir] = contrib
 
-projects[media][version] = 2.0-rc12
+projects[media][version] = 2.0
 projects[media][subdir] = contrib
