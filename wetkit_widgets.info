@@ -1,5 +1,5 @@
 name = WetKit Widgets
-description = Creates widgets for Drupal WxT.
+description = Creates widgets for the Drupal Web Experience Toolkit (WxT).
 core = 7.x
 package = WetKit
 dependencies[] = ctools
